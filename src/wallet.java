@@ -19,7 +19,7 @@ public class wallet {
 		
 		final callMethod serviceMethod = commandList.get("add");
 		serviceMethod.execute();
-		
+		//http://stackoverflow.com/a/5488107
 		Scanner input = new Scanner(System.in);
 		System.out.println("Please enter command:");
 		command = input.nextLine();
