@@ -1,5 +1,5 @@
 
-public interface callMethod {
+public interface CallMethod {
 
 	public void execute();
 
