@@ -19,11 +19,24 @@ public class Wallet {
 		System.out.println("Please enter command:");
 		command = input.nextLine();
 		
-		final CallMethod serviceMethod = commandList.get(command);
-		serviceMethod.execute();
+		CommandLineParsing parse = new CommandLineParsing();
+		parse.Parser(command);
 		
-		//System.out.println("Command inserted: "+command);
-			
-	}
+		try{
+			if (command.length() == 0)
+	        	{
+	            	System.out.println("No command entered");
+	        	}
+	        else
+	        	{
+	        	
+	        		final CallMethod serviceMethod = commandList.get(command);
+					serviceMethod.execute();
+	        	}
+
+		}catch(Exception e){
+			System.out.println(e);
+		}
+	}	
 }
 
