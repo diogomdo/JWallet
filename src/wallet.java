@@ -19,18 +19,18 @@ public class Wallet {
 		System.out.println("Please enter command:");
 		command = input.nextLine();
 		
-		CommandLineParsing parse = new CommandLineParsing();
-		parse.Parser(command);
+		Utils parse = new Utils();
+		String[] cmd = parse.Parser(command);
+		System.out.println(cmd[0]);
 		
 		try{
-			if (command.length() == 0)
+			if (command.length() == 0 && commandList.containsKey(cmd[0]) != true )
 	        	{
 	            	System.out.println("No command entered");
 	        	}
 	        else
 	        	{
-	        	
-	        		final CallMethod serviceMethod = commandList.get(command);
+	        		final CallMethod serviceMethod = commandList.get(cmd[0]);
 					serviceMethod.execute();
 	        	}
 
