@@ -13,15 +13,15 @@ public class WalletContainer {
         MoedasDefault.put("10c", 0);
         MoedasDefault.put("20c", 0);
         MoedasDefault.put("50c", 0);
-        MoedasDefault.put("1€", 0);
-        MoedasDefault.put("2€", 0);
-        NotasDefault.put("5€", 0);
-        NotasDefault.put("10€", 0);
-        NotasDefault.put("20€", 0);
-        NotasDefault.put("50€", 0);
-        NotasDefault.put("100€", 0);
-        NotasDefault.put("200€", 0);
-        NotasDefault.put("500€", 0);
+        MoedasDefault.put("1e", 0);
+        MoedasDefault.put("2e", 0);
+        NotasDefault.put("5e", 0);
+        NotasDefault.put("10e", 0);
+        NotasDefault.put("20e", 0);
+        NotasDefault.put("50e", 0);
+        NotasDefault.put("100e", 0);
+        NotasDefault.put("200e", 0);
+        NotasDefault.put("500e", 0);
     }
 	
 }
