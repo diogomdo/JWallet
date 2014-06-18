@@ -26,7 +26,7 @@ public class AddOperation implements CallMethod{
 			}
 		}
 		
-		System.out.print(cont.Container);
+		//System.out.print(cont.Container);
 		
 	}
 }
