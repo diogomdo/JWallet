@@ -1,6 +1,5 @@
 import java.util.*;
 
-
 public class Wallet {
 	
 	public static void main(String[] args) {
@@ -31,7 +30,7 @@ public class Wallet {
 	        else
 	        	{
 	        		final CallMethod serviceMethod = commandList.get(cmd[0]);
-					serviceMethod.execute();
+					serviceMethod.execute(cmd);
 	        	}
 
 		}catch(Exception e){

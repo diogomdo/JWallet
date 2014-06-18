@@ -25,4 +25,13 @@ public class WalletContainer {
         NotasDefault.put("500e", 50000);
     }
 	
+	public Map<String, Integer> getMoedasDefault(){
+		return MoedasDefault;
+	}
+	public Map<String, Integer> getNotasDefault(){
+		return NotasDefault;
+	}
+	public void setContainer(ArrayList<Integer> Container){
+		this.Container = Container;
+	}
 }
