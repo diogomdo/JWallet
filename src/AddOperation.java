@@ -4,13 +4,12 @@ import java.util.*;
 public class AddOperation implements CallMethod{
 
 	@Override
-	public void execute(String[] cmd) {
+	public void execute(String[] cmd, WalletContainer cont) {
 		//System.out.print(cmd[2]);
 		
 		//http://stackoverflow.com/a/8722886
-		WalletContainer cont = new WalletContainer();
 		Map<String, Integer> moedas = cont.getMoedasDefault();
-		Map<String, Integer> notas = cont.getMoedasDefault();
+		Map<String, Integer> notas = cont.getNotasDefault();
 		
 		
 		for (String value:cmd){

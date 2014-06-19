@@ -5,12 +5,14 @@ public class Wallet {
 	public static void main(String[] args) {
 		
 		String command = null;
-		
+		WalletContainer cont = new WalletContainer();
 		//http://codereview.stackexchange.com/a/27505
 		Map<String, CallMethod> commandList = new HashMap<>();
 		
 		commandList.put("add", new AddOperation());
 		commandList.put("total", new ContainerTotal());
+		commandList.put("notas", new DescribeNotas());
+		commandList.put("moedas", new DescribeMoedas());
 		
 		System.out.println("Starting JWallet");
 		while(true){
@@ -35,7 +37,7 @@ public class Wallet {
 		        else
 		        	{
 		        		final CallMethod serviceMethod = commandList.get(cmd[0]);
-						serviceMethod.execute(cmd);
+						serviceMethod.execute(cmd, cont);
 		        	}
 	
 			}catch(Exception e){
