@@ -10,12 +10,13 @@ public class Wallet {
 		Map<String, CallMethod> commandList = new HashMap<>();
 		
 		commandList.put("add", new AddOperation());
+		commandList.put("total", new ContainerTotal());
 		
 		System.out.println("Starting JWallet");
 		while(true){
 			//http://stackoverflow.com/a/5488107
 			Scanner input = new Scanner(System.in);
-			System.out.println("Please enter command:");
+			System.out.println("\nPlease enter command:");
 			command = input.nextLine();
 			
 			Utils parse = new Utils();
@@ -25,10 +26,10 @@ public class Wallet {
 			try{
 				if (command.length() == 0 && commandList.containsKey(cmd[0]) != true )
 		        	{
-		            	System.out.println("No command entered or invalid");
+		            	System.out.println("\nNo command entered or invalid");
 		        	}
 				else if(cmd[0].contains("exit")){
-					System.out.print("Terminated");
+					System.out.print("\nTerminated");
 					break;
 					}
 		        else

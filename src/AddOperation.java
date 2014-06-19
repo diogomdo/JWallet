@@ -15,14 +15,14 @@ public class AddOperation implements CallMethod{
 		
 		for (String value:cmd){
 			if(moedas.containsKey(value) == true){
-				System.out.print("Moeda: "+ value);
+				System.out.print("\nMoeda: "+ value+"\n");
 				cont.Container.add(moedas.get(value));
 				
 			}else if(notas.containsKey(value) == true){
-				System.out.print("Notas: "+ value);
+				System.out.print("\nNotas: "+ value+"\n");
 				cont.Container.add(notas.get(value));
 			}else{
-				System.out.print("Invalid value: " + value);
+				System.out.print("\nInvalid value: " + value+"\n");
 			}
 		}
 		

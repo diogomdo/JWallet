@@ -34,4 +34,7 @@ public class WalletContainer {
 	public void setContainer(ArrayList<Integer> Container){
 		this.Container = Container;
 	}
+	public ArrayList<Integer> getContainer(){
+		return Container;
+	}
 }
