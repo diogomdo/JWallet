@@ -1,0 +1,28 @@
+TODO
+===============================================
+
+- formatar o código (no eclipse é ctrl+shift+f)
+- campos das classes devem ser lowercase
+- usar um enum para as moedas e notas (http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+
+- aceitar operação add com valores não reconhecidos:
+
+	> add 33c
+	deve ser equivalente a:
+	=> add 20c
+	=> add 10c
+	=> add 2c
+	=> add 1c
+
+	pode haver várias combinações:
+	> add 3e
+	=> add 1e
+	=> add 1e
+	=> add 1e
+	ou
+	=> add 1e
+	=> add 2e
+	ou
+	...
+
+- finalmente, quero que "mavenizes" o projeto
