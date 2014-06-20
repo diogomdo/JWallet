@@ -1,11 +1,13 @@
+package WalletEnum;
+
 import java.util.ArrayList;
 
 import WalletEnum.WalletContainerEnum;
 
-public class ContainerTotal implements CallMethod {
+public class ContainerTotalEnum implements CallMethodEnum {
 
 	@Override
-	public void execute(String[] cmd, WalletContainer cont) {
+	public void execute(String[] cmd, WalletContainerEnum cont) {
 
 		System.out.print("Total Op\n");
 

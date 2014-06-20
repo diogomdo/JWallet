@@ -1,9 +1,12 @@
 TODO
 ===============================================
 
-- formatar o código (no eclipse é ctrl+shift+f)
-- campos das classes devem ser lowercase
-- usar um enum para as moedas e notas (http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html)
+[DONE] - formatar o código (no eclipse é ctrl+shift+f)
+[DONE] - campos das classes devem ser lowercase
+
+[DONE] - usar um enum para as moedas e notas 
+	http://docs.oracle.com/javase/tutorial/java/javaOO/enum.html
+	http://javahowto.blogspot.pt/2008/04/java-enum-examples.html
 
 - aceitar operação add com valores não reconhecidos:
 
