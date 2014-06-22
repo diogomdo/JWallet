@@ -19,10 +19,11 @@ public class AddOperationEnum implements CallMethodEnum {
 			}else{
 				System.out.print("Ortodox values\n");
 				UtilsEnum Opp = new UtilsEnum();
-				System.out.print(value+"\n");
+				System.out.print("to decomopose: "+value+"\n");
 				//Opp.deconstruct(value);
 				if (cont.findAndAdd(Opp.deconstruct(value)) != null){
-					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
+//					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
+					System.out.print("\n");
 				}
 			}
 		}
