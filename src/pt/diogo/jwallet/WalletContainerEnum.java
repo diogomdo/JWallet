@@ -15,14 +15,14 @@ public class WalletContainerEnum {
 		public final String label;
 		public final int value;
 		
-		// Porque 'Moedas" ao nomear o metodo?
+		
 		public static Moedas find(String label){
 			for(Moedas m:Moedas.values()){
 				if(m.label.equals(label)){
 					return m;
 				}
 			}
-			// Porque este null?
+			
 			return null;
 		}
 		
@@ -31,6 +31,20 @@ public class WalletContainerEnum {
 			this.label = label;
 			this.value = value;
 		}	
+	}
+	
+	public Set<Integer> findAndAdd(int value){
+		int valueToAdd = 0;
+		Set<Integer> allValues = null;
+		for(Moedas m:Moedas.values()){
+			System.out.print("to decomposite: "+value+"\n");
+			valueToAdd = m.value;
+			if(m.value < value){
+				System.out.print(m.value+"\n");
+				allValues.add(valueToAdd);
+			}
+		}
+		return allValues;	
 	}
 	
 	public enum Notas{
