@@ -1,27 +1,32 @@
-import java.util.*;
+package pt.diogo.jwallet;
 
-public class Wallet {
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class WalletEnum {
 
 	public static void main(String[] args) {
 
 		String command = null;
-		WalletContainer cont = new WalletContainer();
+		WalletContainerEnum cont = new WalletContainerEnum();
 		// http://codereview.stackexchange.com/a/27505
-		Map<String, CallMethod> commandList = new HashMap<>();
+		Map<String, CallMethodEnum> commandList = new HashMap<>();
 
-		commandList.put("add", new AddOperation());
-		commandList.put("total", new ContainerTotal());
-		commandList.put("notas", new DescribeNotas());
-		commandList.put("moedas", new DescribeMoedas());
+		commandList.put("add", new AddOperationEnum());
+		commandList.put("total", new ContainerTotalEnum());
+		commandList.put("notas", new DescribeNotasEnum());
+		commandList.put("moedas", new DescribeMoedasEnum());
 
 		System.out.println("Starting JWallet");
 		while (true) {
 			// http://stackoverflow.com/a/5488107
+			@SuppressWarnings("resource")
 			Scanner input = new Scanner(System.in);
 			System.out.println("\nPlease enter command:");
 			command = input.nextLine();
 
-			Utils parse = new Utils();
+			UtilsEnum parse = new UtilsEnum();
 			String[] cmd = parse.Parser(command);
 			System.out.println("Command: " + cmd[0]);
 
@@ -33,7 +38,7 @@ public class Wallet {
 					System.out.print("\nTerminated");
 					break;
 				} else {
-					final CallMethod serviceMethod = commandList.get(cmd[0]);
+					final CallMethodEnum serviceMethod = commandList.get(cmd[0]);
 					serviceMethod.execute(cmd, cont);
 				}
 

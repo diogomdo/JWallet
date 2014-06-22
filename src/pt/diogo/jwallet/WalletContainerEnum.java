@@ -1,10 +1,12 @@
-package WalletEnum;
+package pt.diogo.jwallet;
 
-import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 public class WalletContainerEnum {
 	
-	ArrayList<Integer> container = new ArrayList<Integer>();
+	//http://stackoverflow.com/a/13821728
+	Set<Integer> container = new HashSet<Integer>();
 	
 	public enum Moedas{
 		UMC("1c",1), DOISC("2c", 2), CINCOC("5c",5), DEZC("10c", 10),
@@ -56,11 +58,11 @@ public class WalletContainerEnum {
 		}	
 	}
 	
-	public void setContainer(ArrayList<Integer> Container) {
+	public void setContainer(Set<Integer> Container) {
 		this.container = Container;
 	}
 
-	public ArrayList<Integer> getContainer() {
+	public Set<Integer> getContainer() {
 		return container;
 	}
 }

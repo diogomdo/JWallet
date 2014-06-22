@@ -1,7 +1,7 @@
-package WalletEnum;
+package pt.diogo.jwallet;
 
-import WalletEnum.WalletContainerEnum.Moedas;
-import WalletEnum.WalletContainerEnum.Notas;
+import pt.diogo.jwallet.WalletContainerEnum.Moedas;
+import pt.diogo.jwallet.WalletContainerEnum.Notas;
 
 public class AddOperationEnum implements CallMethodEnum {
 

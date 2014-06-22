@@ -1,4 +1,4 @@
-package WalletEnum;
+package pt.diogo.jwallet;
 
 public interface CallMethodEnum {
 

@@ -1,8 +1,8 @@
-package WalletEnum;
+package pt.diogo.jwallet;
 
-import java.util.ArrayList;
+import java.util.Set;
 
-import WalletEnum.WalletContainerEnum;
+import pt.diogo.jwallet.WalletContainerEnum;
 
 public class ContainerTotalEnum implements CallMethodEnum {
 
@@ -11,7 +11,7 @@ public class ContainerTotalEnum implements CallMethodEnum {
 
 		System.out.print("Total Op\n");
 
-		ArrayList<Integer> totalList = cont.container;
+		Set<Integer> totalList = cont.container;
 		Integer total = 0;
 
 		for (Integer value : totalList) {

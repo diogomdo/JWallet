@@ -1,18 +1,17 @@
-package WalletEnum;
+package pt.diogo.jwallet;
 
-import java.util.ArrayList;
+import java.util.Set;
 
-import WalletEnum.WalletContainerEnum;
-import WalletEnum.WalletContainerEnum.Moedas;
+import pt.diogo.jwallet.WalletContainerEnum.Notas;
 
-public class DescribeMoedasEnum implements CallMethodEnum {
+public class DescribeNotasEnum implements CallMethodEnum {
 
 	@Override
 	public void execute(String[] cmd, WalletContainerEnum cont) {
 
-		ArrayList<Integer> totalList = cont.container;
+		Set<Integer> totalList = cont.container;
 		
-		for (Moedas m: Moedas.values()){
+		for (Notas m: Notas.values()){
 			Integer i = 0;
 			if(totalList.contains(m.value)){
 				for (Integer value : totalList) {
@@ -25,3 +24,4 @@ public class DescribeMoedasEnum implements CallMethodEnum {
 		}
 	}
 }
+
