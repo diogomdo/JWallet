@@ -1,6 +1,8 @@
 package pt.diogo.jwallet;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class WalletContainer {
@@ -33,19 +35,19 @@ public class WalletContainer {
 		}
 	}
 
-	public Set<Integer> findAndAdd(int value) {
+	public List<Integer> findAndAdd(int value) {
 		int valueToAdd = 0;
-		Set<Integer> allValues = null;
+		List<Integer> allValues = new ArrayList<Integer>();
 		while (value != 0) {
 			for (Moedas m : Moedas.values()) {
-				// System.out.print("Value status: " + value + "\n");
-				// System.out.print("array: " + m.value + "\n");
+//				 System.out.print("Value status: " + value + "\n");
+//				 System.out.print("array: " + m.value + "\n");
 				valueToAdd = m.value;
 				if (m.value <= value) {
 					System.out.print("to add " + m.value + "\n");
 					value = value - valueToAdd;
+					allValues.add(valueToAdd);
 					break;
-					// allValues.add(value);
 				}
 			}
 		}
@@ -53,9 +55,9 @@ public class WalletContainer {
 	}
 
 	public enum Notas {
-		CINCOE("5e", 500), DEZE("10e", 1000), VINTEE("20e", 2000), CINQUENTAE(
-				"50e", 5000), CEME("100e", 10000), DUZENTOSE("200e", 20000), QUINHENTOS(
-				"500e", 50000);
+		QUINHENTOS("500e", 50000), DUZENTOSE("200e", 20000), CEME("100e", 10000), CINQUENTAE(
+				"50e", 5000), VINTEE("20e", 2000), DEZE("10e", 1000), CINCOE(
+				"5e", 500);
 
 		public final String label;
 		public final int value;

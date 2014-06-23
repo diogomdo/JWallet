@@ -22,7 +22,7 @@ public class AddOperation implements CallMethod {
 				System.out.print("to decomopose: "+value+"\n");
 				//Opp.deconstruct(value);
 				if (cont.findAndAdd(Opp.deconstruct(value)) != null){
-//					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
+					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
 					System.out.print("\n");
 				}
 			}
