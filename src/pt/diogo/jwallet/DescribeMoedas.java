@@ -1,5 +1,6 @@
 package pt.diogo.jwallet;
 
+import java.util.List;
 import java.util.Set;
 
 import pt.diogo.jwallet.WalletContainer;
@@ -10,7 +11,7 @@ public class DescribeMoedas implements CallMethod {
 	@Override
 	public void execute(String[] cmd, WalletContainer cont) {
 
-		Set<Integer> totalList = cont.container;
+		List<Integer> totalList = cont.container;
 		
 		for (Moedas m: Moedas.values()){
 			Integer i = 0;

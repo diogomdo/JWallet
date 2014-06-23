@@ -8,8 +8,8 @@ import java.util.Set;
 public class WalletContainer {
 
 	// http://stackoverflow.com/a/13821728
-	Set<Integer> container = new HashSet<Integer>();
-
+//	Set<Integer> container = new HashSet<Integer>();
+	List<Integer> container = new ArrayList<Integer>();
 	public enum Moedas {
 		DOISE("2e", 200), UME("1e", 100), CINQUENTAC("50c", 50), VITNEC("20c",
 				20), DEZC("10c", 10), CINCOC("5c", 5), DOISC("2c", 2), UMC(
@@ -51,6 +51,7 @@ public class WalletContainer {
 				}
 			}
 		}
+		System.out.print(allValues);
 		return allValues;
 	}
 
@@ -80,11 +81,11 @@ public class WalletContainer {
 		}
 	}
 
-	public void setContainer(Set<Integer> Container) {
+	public void setContainer(List<Integer> Container) {
 		this.container = Container;
 	}
 
-	public Set<Integer> getContainer() {
+	public List<Integer> getContainer() {
 		return container;
 	}
 }
