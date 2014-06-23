@@ -14,12 +14,15 @@ public class Utils {
 		if (value.charAt(value.length() - 1) == 'e') {
 			value = value.substring(0, value.length() - 1);
 			if (value.contains(".")) {
+				int decimals = (value.length() - value.indexOf('.')) - 1;
+				int i = value.indexOf('.') + 2;
 				value = value.replace(".", "");
+
 				if (value.length() == 2) {
 					valueInt = Integer.parseInt(value);
 					valueInt = valueInt * 10;
-				} else if (value.length() >= 3) {
-					value = value.substring(0, 3);
+				} else if (decimals >= 3) {
+					value = value.substring(0, i);
 					valueInt = Integer.parseInt(value);
 				}
 			} else {
@@ -36,7 +39,7 @@ public class Utils {
 			valueInt = 0;
 
 		}
-		//System.out.print(valueInt);
+		// System.out.print(valueInt);
 		return valueInt;
 	}
 }

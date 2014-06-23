@@ -1,6 +1,5 @@
 package pt.diogo.jwallet;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -43,8 +42,10 @@ public class Wallet {
 					break;
 				} else {
 					final CallMethod serviceMethod = commandList.get(cmd[0]);
-					//remove add from string http://stackoverflow.com/a/12812355
-					List<String> list = new ArrayList<String>(Arrays.asList(cmd));
+					// remove add from string
+					// http://stackoverflow.com/a/12812355
+					List<String> list = new ArrayList<String>(
+							Arrays.asList(cmd));
 					list.remove("add");
 					cmd = list.toArray(new String[0]);
 					serviceMethod.execute(cmd, cont);

@@ -1,8 +1,6 @@
 package pt.diogo.jwallet;
 
 import java.util.List;
-import java.util.Set;
-
 import pt.diogo.jwallet.WalletContainer;
 
 public class ContainerTotal implements CallMethod {

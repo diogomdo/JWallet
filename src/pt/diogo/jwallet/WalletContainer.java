@@ -1,15 +1,13 @@
 package pt.diogo.jwallet;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class WalletContainer {
 
 	// http://stackoverflow.com/a/13821728
-//	Set<Integer> container = new HashSet<Integer>();
 	List<Integer> container = new ArrayList<Integer>();
+
 	public enum Moedas {
 		DOISE("2e", 200), UME("1e", 100), CINQUENTAC("50c", 50), VITNEC("20c",
 				20), DEZC("10c", 10), CINCOC("5c", 5), DOISC("2c", 2), UMC(
@@ -39,9 +37,16 @@ public class WalletContainer {
 		int valueToAdd = 0;
 		List<Integer> allValues = new ArrayList<Integer>();
 		while (value != 0) {
+			for (Notas m : Notas.values()) {
+				valueToAdd = m.value;
+				if (m.value <= value) {
+					System.out.print("to add " + m.value + "\n");
+					value = value - valueToAdd;
+					allValues.add(valueToAdd);
+					break;
+				}
+			}
 			for (Moedas m : Moedas.values()) {
-//				 System.out.print("Value status: " + value + "\n");
-//				 System.out.print("array: " + m.value + "\n");
 				valueToAdd = m.value;
 				if (m.value <= value) {
 					System.out.print("to add " + m.value + "\n");
