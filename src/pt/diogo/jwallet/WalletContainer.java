@@ -3,7 +3,7 @@ package pt.diogo.jwallet;
 import java.util.HashSet;
 import java.util.Set;
 
-public class WalletContainerEnum {
+public class WalletContainer {
 
 	// http://stackoverflow.com/a/13821728
 	Set<Integer> container = new HashSet<Integer>();

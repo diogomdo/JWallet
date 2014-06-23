@@ -2,12 +2,12 @@ package pt.diogo.jwallet;
 
 import java.util.Set;
 
-import pt.diogo.jwallet.WalletContainerEnum;
+import pt.diogo.jwallet.WalletContainer;
 
-public class ContainerTotalEnum implements CallMethodEnum {
+public class ContainerTotal implements CallMethod {
 
 	@Override
-	public void execute(String[] cmd, WalletContainerEnum cont) {
+	public void execute(String[] cmd, WalletContainer cont) {
 
 		System.out.print("Total Op\n");
 

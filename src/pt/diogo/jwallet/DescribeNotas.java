@@ -2,17 +2,16 @@ package pt.diogo.jwallet;
 
 import java.util.Set;
 
-import pt.diogo.jwallet.WalletContainerEnum;
-import pt.diogo.jwallet.WalletContainerEnum.Moedas;
+import pt.diogo.jwallet.WalletContainer.Notas;
 
-public class DescribeMoedasEnum implements CallMethodEnum {
+public class DescribeNotas implements CallMethod {
 
 	@Override
-	public void execute(String[] cmd, WalletContainerEnum cont) {
+	public void execute(String[] cmd, WalletContainer cont) {
 
 		Set<Integer> totalList = cont.container;
 		
-		for (Moedas m: Moedas.values()){
+		for (Notas m: Notas.values()){
 			Integer i = 0;
 			if(totalList.contains(m.value)){
 				for (Integer value : totalList) {
@@ -25,3 +24,4 @@ public class DescribeMoedasEnum implements CallMethodEnum {
 		}
 	}
 }
+

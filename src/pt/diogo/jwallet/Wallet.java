@@ -8,19 +8,19 @@ import java.util.Map;
 import java.util.Scanner;
 import java.util.*;
 
-public class WalletEnum {
+public class Wallet {
 
 	public static void main(String[] args) {
 
 		String command = null;
-		WalletContainerEnum cont = new WalletContainerEnum();
+		WalletContainer cont = new WalletContainer();
 		// http://codereview.stackexchange.com/a/27505
-		Map<String, CallMethodEnum> commandList = new HashMap<>();
+		Map<String, CallMethod> commandList = new HashMap<>();
 
-		commandList.put("add", new AddOperationEnum());
-		commandList.put("total", new ContainerTotalEnum());
-		commandList.put("notas", new DescribeNotasEnum());
-		commandList.put("moedas", new DescribeMoedasEnum());
+		commandList.put("add", new AddOperation());
+		commandList.put("total", new ContainerTotal());
+		commandList.put("notas", new DescribeNotas());
+		commandList.put("moedas", new DescribeMoedas());
 
 		System.out.println("Starting JWallet");
 		while (true) {
@@ -30,7 +30,7 @@ public class WalletEnum {
 			System.out.println("\nPlease enter command:");
 			command = input.nextLine();
 
-			UtilsEnum parse = new UtilsEnum();
+			Utils parse = new Utils();
 			String[] cmd = parse.Parser(command);
 			System.out.println("Command: " + cmd[0]);
 
@@ -42,7 +42,7 @@ public class WalletEnum {
 					System.out.print("\nTerminated");
 					break;
 				} else {
-					final CallMethodEnum serviceMethod = commandList.get(cmd[0]);
+					final CallMethod serviceMethod = commandList.get(cmd[0]);
 					//remove add from string http://stackoverflow.com/a/12812355
 					List<String> list = new ArrayList<String>(Arrays.asList(cmd));
 					list.remove("add");

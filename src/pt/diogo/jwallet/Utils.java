@@ -1,6 +1,6 @@
 package pt.diogo.jwallet;
 
-public class UtilsEnum {
+public class Utils {
 
 	public String[] Parser(String inputLine) {
 
