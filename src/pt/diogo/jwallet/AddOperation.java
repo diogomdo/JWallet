@@ -20,9 +20,10 @@ public class AddOperation implements CallMethod {
 				System.out.print("Ortodox values\n");
 				Utils Opp = new Utils();
 				System.out.print("to decomopose: "+value+"\n");
-				//Opp.deconstruct(value);
-				if (cont.findAndAdd(Opp.deconstruct(value)) != null){
-					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
+				int valueInt = Opp.deconstruct(value);
+				if (valueInt != 0){
+//					System.out.print(cont.findAndAdd(Opp.deconstruct(value)));
+					cont.container.addAll(cont.findAndAdd(Opp.deconstruct(value)));
 					System.out.print("\n");
 				}
 			}

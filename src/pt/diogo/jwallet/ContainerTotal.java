@@ -15,7 +15,7 @@ public class ContainerTotal implements CallMethod {
 		Integer total = 0;
 
 		for (Integer value : totalList) {
-			total = total + value;
+			total = value + total;
 		}
 
 		System.out.print("total: " + (float) total / 100 + "e");
