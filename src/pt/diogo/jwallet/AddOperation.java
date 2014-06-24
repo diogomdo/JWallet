@@ -1,5 +1,9 @@
 package pt.diogo.jwallet;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import pt.diogo.jwallet.WalletContainer.Moedas;
 import pt.diogo.jwallet.WalletContainer.Notas;
 
@@ -8,12 +12,20 @@ public class AddOperation implements CallMethod {
 	@Override
 	public void execute(String[] cmd, WalletContainer cont) {
 
+		// remove add from string
+		// http://stackoverflow.com/a/12812355
+		List<String> list = new ArrayList<String>(Arrays.asList(cmd));
+		list.remove("add");
+		cmd = list.toArray(new String[0]);
+
 		for (String value : cmd) {
-			if (Moedas.find(value) != null) {
-				cont.container.add(Moedas.find(value).value);
+			Moedas Moeda = Moedas.find(value);
+			Notas Nota = Notas.find(value);
+			if (Moeda != null) {
+				cont.container.add(Moeda.value);
 				System.out.print("Moeda: " + value + " added\n");
-			} else if (Notas.find(value) != null) {
-				cont.container.add(Notas.find(value).value);
+			} else if (Nota != null) {
+				cont.container.add(Nota.value);
 				System.out.print("Nota: " + value + " added\n");
 			} else {
 				System.out.print("Ortodox values\n");

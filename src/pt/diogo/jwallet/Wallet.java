@@ -34,20 +34,13 @@ public class Wallet {
 			System.out.println("Command: " + cmd[0]);
 
 			try {
-				if (command.length() == 0
-						&& commandList.containsKey(cmd[0]) != true) {
+				if (!commandList.containsKey(cmd[0])) {
 					System.out.println("\nCommand entered invalid");
 				} else if (cmd[0].contains("exit")) {
 					System.out.print("\nTerminated");
 					break;
 				} else {
 					final CallMethod serviceMethod = commandList.get(cmd[0]);
-					// remove add from string
-					// http://stackoverflow.com/a/12812355
-					List<String> list = new ArrayList<String>(
-							Arrays.asList(cmd));
-					list.remove("add");
-					cmd = list.toArray(new String[0]);
 					serviceMethod.execute(cmd, cont);
 				}
 
