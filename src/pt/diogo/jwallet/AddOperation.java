@@ -33,7 +33,7 @@ public class AddOperation implements CallMethod {
 				System.out.print("to decomopose: " + value + "\n");
 				int valueInt = Opp.deconstruct(value);
 				if (valueInt != 0) {
-					cont.container.addAll(cont.findAndAdd(Opp
+					cont.container.add(cont.findAndAdd(Opp
 							.deconstruct(value)));
 					System.out.print("\n");
 				}

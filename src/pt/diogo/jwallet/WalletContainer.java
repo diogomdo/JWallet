@@ -3,11 +3,29 @@ package pt.diogo.jwallet;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WalletContainer {
-
+public class WalletContainer implements ICurrency {
 	// http://stackoverflow.com/a/13821728
-	List<Integer> container = new ArrayList<Integer>();
+	List<ICurrency> container = new ArrayList<ICurrency>();
 
+	public void setContainer(List<ICurrency> Container) {
+		this.container = Container;
+	}
+
+	public List<ICurrency> getContainer() {
+		return container;
+	}
+	
+	@Override
+	public String getLabel() {
+		return null;
+	}
+
+	@Override
+	public Long getValue() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
 	public enum Moedas {
 		DOISE("2e", 200), UME("1e", 100), CINQUENTAC("50c", 50), VITNEC("20c",
 				20), DEZC("10c", 10), CINCOC("5c", 5), DOISC("2c", 2), UMC(
@@ -86,11 +104,5 @@ public class WalletContainer {
 		}
 	}
 
-	public void setContainer(List<Integer> Container) {
-		this.container = Container;
-	}
 
-	public List<Integer> getContainer() {
-		return container;
-	}
 }
