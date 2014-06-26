@@ -1,7 +1,6 @@
 package pt.diogo.jwallet;
 
 import java.util.List;
-
 import pt.diogo.jwallet.WalletContainer.Notas;
 
 public class DescribeNotas implements CallMethod {
@@ -9,13 +8,13 @@ public class DescribeNotas implements CallMethod {
 	@Override
 	public void execute(String[] cmd, WalletContainer cont) {
 
-		List<ICurrency> totalList = cont.container;
+		List<Integer> totalList = cont.container;
 
 		for (Notas m : Notas.values()) {
 			Integer i = 0;
 			if (totalList.contains(m.value)) {
-				for (ICurrency value : totalList) {
-					if (m.value == value.getValue()) {
+				for (Integer value : totalList) {
+					if (m.value == value) {
 						i++;
 					}
 				}
@@ -23,5 +22,4 @@ public class DescribeNotas implements CallMethod {
 			}
 		}
 	}
-
 }

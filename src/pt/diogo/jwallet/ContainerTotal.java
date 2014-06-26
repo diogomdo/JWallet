@@ -10,11 +10,11 @@ public class ContainerTotal implements CallMethod {
 
 		System.out.print("Total Op\n");
 
-		List<ICurrency> totalList = cont.container;
-		long total = 0;
+		List<Integer> totalList = cont.container;
+		Integer total = 0;
 
-		for (ICurrency value : totalList) {
-			total = value.getValue() + total;
+		for (Integer value : totalList) {
+			total = value + total;
 		}
 
 		System.out.print("total: " + (float) total / 100 + "e");
