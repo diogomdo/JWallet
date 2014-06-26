@@ -8,7 +8,15 @@ public class WalletContainer {
 	// http://stackoverflow.com/a/13821728
 	List<Integer> container = new ArrayList<Integer>();
 
-	public enum Moedas {
+	public void setContainer(List<Integer> Container) {
+		this.container = Container;
+	}
+
+	public List<Integer> getContainer() {
+		return container;
+	}
+
+	public enum Moedas implements ICurrency {
 		DOISE("2e", 200), UME("1e", 100), CINQUENTAC("50c", 50), VITNEC("20c",
 				20), DEZC("10c", 10), CINCOC("5c", 5), DOISC("2c", 2), UMC(
 				"1c", 1);
@@ -26,10 +34,52 @@ public class WalletContainer {
 			return null;
 		}
 
-		// Nao percebi ser invocado so por 'Moedas(...'
 		Moedas(String label, int value) {
 			this.label = label;
 			this.value = value;
+		}
+
+		@Override
+		public String getLabel() {
+			return label;
+		}
+
+		@Override
+		public int getValue() {
+			return value;
+		}
+	}
+
+	public enum Notas implements ICurrency {
+		QUINHENTOS("500e", 50000), DUZENTOSE("200e", 20000), CEME("100e", 10000), CINQUENTAE(
+				"50e", 5000), VINTEE("20e", 2000), DEZE("10e", 1000), CINCOE(
+				"5e", 500);
+
+		public final String label;
+		public final int value;
+
+		public static Notas find(String label) {
+			for (Notas m : Notas.values()) {
+				if (m.label.equals(label)) {
+					return m;
+				}
+			}
+			return null;
+		}
+
+		Notas(String label, int value) {
+			this.label = label;
+			this.value = value;
+		}
+
+		@Override
+		public String getLabel() {
+			return label;
+		}
+
+		@Override
+		public int getValue() {
+			return value;
 		}
 	}
 
@@ -60,37 +110,4 @@ public class WalletContainer {
 		return allValues;
 	}
 
-	public enum Notas {
-		QUINHENTOS("500e", 50000), DUZENTOSE("200e", 20000), CEME("100e", 10000), CINQUENTAE(
-				"50e", 5000), VINTEE("20e", 2000), DEZE("10e", 1000), CINCOE(
-				"5e", 500);
-
-		public final String label;
-		public final int value;
-
-		// Porque 'Moedas" ao nomear o metodo?
-		public static Notas find(String label) {
-			for (Notas m : Notas.values()) {
-				if (m.label.equals(label)) {
-					return m;
-				}
-			}
-			// Porque este null?
-			return null;
-		}
-
-		// Nao percebi ser invocado so por 'Moedas(...'
-		Notas(String label, int value) {
-			this.label = label;
-			this.value = value;
-		}
-	}
-
-	public void setContainer(List<Integer> Container) {
-		this.container = Container;
-	}
-
-	public List<Integer> getContainer() {
-		return container;
-	}
 }
