@@ -22,10 +22,10 @@ public class AddOperation implements CallMethod {
 			Moedas Moeda = Moedas.find(value);
 			Notas Nota = Notas.find(value);
 			if (Moeda != null) {
-				cont.container.add(Moeda.value);
+				cont.container.add(Moeda);
 				System.out.print("Moeda: " + value + " added\n");
 			} else if (Nota != null) {
-				cont.container.add(Nota.value);
+				cont.container.add(Nota);
 				System.out.print("Nota: " + value + " added\n");
 			} else {
 				System.out.print("Ortodox values\n");
@@ -33,8 +33,7 @@ public class AddOperation implements CallMethod {
 				System.out.print("to decomopose: " + value + "\n");
 				int valueInt = Opp.deconstruct(value);
 				if (valueInt != 0) {
-					cont.container.addAll(cont.findAndAdd(Opp
-							.deconstruct(value)));
+					cont.findAndAdd(valueInt);
 					System.out.print("\n");
 				}
 			}

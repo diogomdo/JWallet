@@ -6,13 +6,13 @@ import java.util.List;
 public class WalletContainer {
 
 	// http://stackoverflow.com/a/13821728
-	List<Integer> container = new ArrayList<Integer>();
+	List<ICurrency> container = new ArrayList<ICurrency>();
 
-	public void setContainer(List<Integer> Container) {
+	public void setContainer(List<ICurrency> Container) {
 		this.container = Container;
 	}
 
-	public List<Integer> getContainer() {
+	public List<ICurrency> getContainer() {
 		return container;
 	}
 
@@ -83,31 +83,31 @@ public class WalletContainer {
 		}
 	}
 
-	public List<Integer> findAndAdd(int value) {
+	public ICurrency findAndAdd(int value) {
 		int valueToAdd = 0;
-		List<Integer> allValues = new ArrayList<Integer>();
+		ArrayList<ICurrency> allValues = new ArrayList<ICurrency>();
 		while (value != 0) {
 			for (Notas m : Notas.values()) {
-				valueToAdd = m.value;
 				if (m.value <= value) {
 					System.out.print("to add " + m.value + "\n");
+					valueToAdd = m.value;
 					value = value - valueToAdd;
-					allValues.add(valueToAdd);
+					this.container.add(m);
 					break;
 				}
 			}
 			for (Moedas m : Moedas.values()) {
-				valueToAdd = m.value;
 				if (m.value <= value) {
 					System.out.print("to add " + m.value + "\n");
+					valueToAdd = m.value;
 					value = value - valueToAdd;
-					allValues.add(valueToAdd);
+					this.container.add(m);
 					break;
 				}
 			}
 		}
 		System.out.print(allValues);
-		return allValues;
+		return null;
 	}
 
 }

@@ -8,13 +8,13 @@ public class DescribeNotas implements CallMethod {
 	@Override
 	public void execute(String[] cmd, WalletContainer cont) {
 
-		List<Integer> totalList = cont.container;
+		List<ICurrency> totalList = cont.container;
 
 		for (Notas m : Notas.values()) {
 			Integer i = 0;
-			if (totalList.contains(m.value)) {
-				for (Integer value : totalList) {
-					if (m.value == value) {
+			if (totalList.contains(m)) {
+				for (ICurrency value : totalList) {
+					if (m == value) {
 						i++;
 					}
 				}
