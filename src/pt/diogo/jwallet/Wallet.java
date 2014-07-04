@@ -20,6 +20,7 @@ public class Wallet {
 		commandList.put("total", new ContainerTotal());
 		commandList.put("notas", new DescribeNotas());
 		commandList.put("moedas", new DescribeMoedas());
+		commandList.put("exchange", new ExchangeOperation());
 
 		System.out.println("Starting JWallet");
 		while (true) {
@@ -43,7 +44,6 @@ public class Wallet {
 					final CallMethod serviceMethod = commandList.get(cmd[0]);
 					serviceMethod.execute(cmd, cont);
 				}
-
 			} catch (Exception e) {
 				System.out.println(e);
 			}

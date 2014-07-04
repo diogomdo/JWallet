@@ -8,6 +8,17 @@ public class Utils {
 		return parsedLine;
 	}
 
+	public boolean ExchangeInputValidation(String[] cmd) {
+		if (!(cmd.length == 2)) {
+			System.out.print("\nJust exchange one for request");
+			return false;
+		} else if (deconstruct(cmd[1]) == 0) {
+			System.out.print("\nValue not valid");
+			return false;
+		}
+		return true;
+	}
+
 	public int deconstruct(String value) {
 		int valueInt = 0;
 
@@ -39,7 +50,7 @@ public class Utils {
 			valueInt = 0;
 
 		}
-		// System.out.print(valueInt);
+
 		return valueInt;
 	}
 }
