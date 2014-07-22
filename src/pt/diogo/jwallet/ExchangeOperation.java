@@ -4,18 +4,19 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
-import java.net.URLEncoder;
-import java.util.List;
-import java.util.Map.Entry;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ExchangeOperation implements CallMethod {
 
 	@Override
 	public void execute(String[] cmd, WalletContainer cont) throws IOException {
 		// TODO Auto-generated method stub
+		Map<String, String> myMap = new HashMap<String, String>();
+		String[] s = null;
 		Utils Opp = new Utils();
 		if (Opp.ExchangeInputValidation(cmd)) {
 			String url = "http://rate-exchange.appspot.com/currency?from=USD&to=EUR";
@@ -32,12 +33,23 @@ public class ExchangeOperation implements CallMethod {
 				try (BufferedReader reader = new BufferedReader(
 						new InputStreamReader(response, charset))) {
 					for (String line; (line = reader.readLine()) != null;) {
-						System.out.println(line);
+						line = line.replace("{", "");
+					  	line = line.replace("}", "");
+						line = line.replace("\"", "");
+						s = line.split(",");
+						System.out.print(line+"\n");
+						String[] pairs = line.split(",");
+						for (int i=0;i<pairs.length;i++) {
+						    String pair = pairs[i];
+						    String[] keyValue = pair.split(":");
+						    System.out.print(keyValue[1]+"\n");
+						    myMap.put(keyValue[0], keyValue[1]);
+						}
 					}
 				}
 			}
-
+			
+			System.out.print(myMap.get("rate"));
 		}
 	}
-
 }
