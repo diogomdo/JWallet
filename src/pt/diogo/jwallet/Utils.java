@@ -53,4 +53,25 @@ public class Utils {
 
 		return valueInt;
 	}
+	
+	public Float getRate(String rawLine){
+		
+		float rateValue = 0;
+		String[] s = null;
+		rawLine = rawLine.replace("{", "");
+		rawLine = rawLine.replace("}", "");
+	  	rawLine = rawLine.replace("\"", "");
+	  	rawLine = rawLine.replace(" ", "");
+		s = rawLine.split(",");
+
+		String[] pairs = rawLine.split(",");
+		for (int i=0;i<pairs.length;i++) {
+		    String pair = pairs[i];
+		    String[] keyValue = pair.split(":");
+		    if(keyValue[0].contains("rate")){
+		    	rateValue = Float.parseFloat(keyValue[1]);
+		    }
+		}
+		return rateValue;
+	}
 }
