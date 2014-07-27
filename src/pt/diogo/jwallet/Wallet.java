@@ -17,7 +17,7 @@ public class Wallet {
 		commandList.put("total", new ContainerTotal());
 		commandList.put("notas", new DescribeNotas());
 		commandList.put("moedas", new DescribeMoedas());
-		commandList.put("exchange", new ExchangeOperation());
+		commandList.put("exchange", new ExchangeOperationLibs());
 
 		System.out.println("Starting JWallet");
 		while (true) {

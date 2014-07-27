@@ -4,12 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class ExchangeOperation implements CallMethod {
 
@@ -19,13 +16,11 @@ public class ExchangeOperation implements CallMethod {
 		Utils Opp = new Utils();
 		String url = "http://rate-exchange.appspot.com/currency?from=USD&to=EUR";
 		String charset = "UTF-8";
-		String convertTo = "USD";
-
 		URLConnection connection = new URL(url).openConnection();
 
 		InputStream response = connection.getInputStream();
 
-		String contentType = connection.getHeaderField("Content-Type");
+		connection.getHeaderField("Content-Type");
 
 		if (charset != null) {
 			try (BufferedReader reader = new BufferedReader(
@@ -39,7 +34,7 @@ public class ExchangeOperation implements CallMethod {
 						total = value.getValue() + total;
 					}
 
-					System.out.printf("%.2f",(total / Opp.getRate(line))/100);
+					System.out.printf("%.2f $",(total / Opp.getRate(line))/100);
 				}
 			}
 		}

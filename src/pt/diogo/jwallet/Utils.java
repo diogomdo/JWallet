@@ -57,12 +57,11 @@ public class Utils {
 	public Float getRate(String rawLine){
 		
 		float rateValue = 0;
-		String[] s = null;
 		rawLine = rawLine.replace("{", "");
 		rawLine = rawLine.replace("}", "");
 	  	rawLine = rawLine.replace("\"", "");
 	  	rawLine = rawLine.replace(" ", "");
-		s = rawLine.split(",");
+		rawLine.split(",");
 
 		String[] pairs = rawLine.split(",");
 		for (int i=0;i<pairs.length;i++) {
