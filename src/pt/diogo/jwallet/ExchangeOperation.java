@@ -34,7 +34,8 @@ public class ExchangeOperation implements CallMethod {
 						total = value.getValue() + total;
 					}
 
-					System.out.printf("%.2f $",(total / Opp.getRate(line))/100);
+					System.out.printf("%.2f $",
+							(total / Opp.getRate(line)) / 100);
 				}
 			}
 		}
