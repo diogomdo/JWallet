@@ -1,0 +1,14 @@
+pt/diogo/jwallet/AddOperation.class
+pt/diogo/jwallet/ContainerTotal.class
+pt/diogo/jwallet/Utils.class
+pt/diogo/jwallet/DescribeNotas.class
+pt/diogo/jwallet/ExchangeOperation.class
+pt/diogo/jwallet/ICurrency.class
+pt/diogo/jwallet/WalletContainer.class
+pt/diogo/jwallet/WalletContainer$Notas.class
+pt/diogo/jwallet/Wallet.class
+pt/diogo/jwallet/DescribeMoedas.class
+pt/diogo/jwallet/WalletContainer$Moedas.class
+pt/diogo/jwallet/ExchangeOperationLibs.class
+pt/diogo/jwallet/CallMethod.class
+pt/diogo/jwallet/WalletDBConn.class

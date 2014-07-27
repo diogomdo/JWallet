@@ -1,5 +1,6 @@
 package pt.diogo.jwallet;
 
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -7,6 +8,7 @@ import java.util.Scanner;
 public class Wallet {
 
 	public static void main(String[] args) {
+		Connection connection;
 
 		String command = null;
 		WalletContainer cont = new WalletContainer();
@@ -20,6 +22,9 @@ public class Wallet {
 		commandList.put("exchange", new ExchangeOperationLibs());
 
 		System.out.println("Starting JWallet");
+		
+		connection = WalletDBConn.getConnection();
+		
 		while (true) {
 			// http://stackoverflow.com/a/5488107
 			@SuppressWarnings("resource")
