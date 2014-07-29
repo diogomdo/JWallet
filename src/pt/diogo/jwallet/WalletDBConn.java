@@ -7,7 +7,7 @@ import java.sql.SQLException;
 public class WalletDBConn {
 	
 	private static WalletDBConn instance = new WalletDBConn();
-    public static final String URL = "jdbc:mysql://localhost/jwalletdb";
+    public static final String URL = "jdbc:mysql://localhost/test";
     public static final String USER = "";
     public static final String PASSWORD = "";
     public static final String DRIVER_CLASS = "com.mysql.jdbc.Driver";

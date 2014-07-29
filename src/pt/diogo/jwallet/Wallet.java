@@ -11,6 +11,7 @@ public class Wallet {
 		Connection connection;
 
 		String command = null;
+		
 		WalletContainer cont = new WalletContainer();
 		// http://codereview.stackexchange.com/a/27505
 		Map<String, CallMethod> commandList = new HashMap<>();
